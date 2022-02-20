@@ -1,9 +1,10 @@
-
+// Pulling current date and time using moment js
 var today = moment();
-var format = today.format("dddd, MMMM Do");
+var format = today.format("dddd, MMMM Do, hh:mm A");
 var time = today.format("H");
-var first_hour = document.getElementById('9');
-first_hour = today.format("9");
+var first_hour = document.getElementById('hour-9');
+first_hour = moment().format('hour', 9);
+var colorEvent = document.getElementById('event-9');
 // saveIds = ['saveBtn1','saveBtn2','saveBtn3','saveBtn4','saveBtn5','saveBtn6','saveBtn7','saveBtn8','saveBtn9']
 // saveIndex = 0;
 var saveBtn1 = document.querySelector('#saveBtn1');
@@ -24,8 +25,10 @@ var saveBtn8 = document.querySelector('#saveBtn8');
 var input8 = document.querySelector('#event-16');
 var saveBtn9 = document.querySelector('#saveBtn9');
 var input9 = document.querySelector('#event-17');
+var textareaEL = $('textarea');
+textareaEL.addClass('past');
+var hour = document.getElementsByClassName('hour');
 
-console.log(time);
 // displaying the current day in the header
 var currentDay = document.getElementById('currentDay');
 currentDay.textContent = format;
@@ -33,11 +36,9 @@ currentDay.textContent = format;
 function formatTimeblock() {
 
     if ( first_hour < time) {
-        var colorEvent = document.getElementById('9-event');
-        colorEvent.style;
+        textareaEL.addClass('past');
+        console.log(input1);
     }
-    
-
 }
 
 
